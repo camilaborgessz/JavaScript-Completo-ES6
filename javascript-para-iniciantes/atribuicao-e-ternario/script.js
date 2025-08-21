@@ -34,6 +34,6 @@ console.log(scroll);
 // E false caso o contrário.
 var possuiCarro = true;
 var possuiCasa = true;
-var darCredito = (possuiCarro === true && possuiCasa === true) ? 'Dar crédito' : 'Não dar crédito';
+var darCredito = (possuiCarro && possuiCasa) ? 'Dar crédito' : 'Não dar crédito';
 
 console.log(darCredito);
