@@ -36,3 +36,35 @@ if (small.matches) {
 } else {
   console.log('Tela maior que 600px')
 }
+
+
+// Verifique a distância da primeira imagem
+// em relação ao topo da página
+const firstImg = document.querySelector('img')
+console.log(firstImg.offsetTop)
+
+// Retorne a soma da largura de todas as imagens
+let allImgs = document.querySelectorAll('img')
+let contador = 0
+allImgs.forEach((img)=> {
+  let largura = contador += img.clientWidth
+})
+console.log(contador)
+
+// Verifique se os links da página possuem
+// o mínimo recomendado para telas utilizadas
+// com o dedo. (48px/48px de acordo com o google)
+
+const links = document.querySelectorAll('a')
+links.forEach((link)=> {
+  if (link.offsetWidth >= 48 && link.offsetHeight >= 48) {
+    console.log(link, 'Possui acessibilidade')
+  } else {
+    console.log(link, 'Não possui acessibilidade')
+  }
+})
+
+// Se o browser for menor que 720px,
+// adicione a classe menu-mobile ao menu
+
+const browser = window.matchMedia('(max-width: 720px)').matches
