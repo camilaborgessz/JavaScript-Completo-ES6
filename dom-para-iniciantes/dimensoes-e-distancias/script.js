@@ -68,3 +68,8 @@ links.forEach((link)=> {
 // adicione a classe menu-mobile ao menu
 
 const browser = window.matchMedia('(max-width: 720px)').matches
+
+if(browser) {
+  const menu = document.querySelector('.menu')
+  menu.classList.add('menu-mobile')
+} 
