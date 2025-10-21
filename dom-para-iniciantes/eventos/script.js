@@ -70,32 +70,28 @@ imgs.forEach(img => {
 // demais itens caso eles possuam a mesma. Previna
 // o comportamento padrão desses links
 
-const linksInternos = document.querySelectorAll('a')
+const linksInternos = document.querySelectorAll('[href^="#"]')
 
-linksInternos.forEach(link => {
-  link.addEventListener('click', handleAtivo)
-});
+linksInternos.addEventListener('click', linksInternosToggle())
 
-function handleAtivo(event) {
-  event.preventDefault()
-  linksInternos.forEach(link => {
-    link.classList.remove('ativo')
+function linksInternosToggle(){
+  linksInternos.forEach(element => {
+    console.log(element.classList.contains('ativo'))
   });
-  event.currentTarget.classList.add('ativo')
 }
+
+// a pessoa vai clicar em um dos linksInternos, então preciso de um evento de click 
+// quando um ativar, ou seja, o evento ativar ele vai verificar se os outros links internos possuem a classe ativo, se tiver ele vai tirar e apenas ativar no link em que foi clicado
+// não esquecer de prevenir o comportamento padrão do evento de clique
+
+
+// como fazer isso em código de forma eficiente?
+// - criar constante com os links 
+// - criar o evento de clique
+// - na função callback do eventListener fazer uma condição, se cada um dos elementos
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
-
-const page = document.querySelector('*')
-
-function showElement(event) {
-  console.log(event.currentTarget)
-}
-
-page.forEach(element => {
-  page.addEventListener('click', showElement)
-});
 
 
 // Utilizando o código anterior, ao invés de mostrar no console,
