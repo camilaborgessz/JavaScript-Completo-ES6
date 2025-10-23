@@ -38,11 +38,20 @@ p.addEventListener('click', show)
 // O this aqui se referência ao elemento que estamos chamando
 
 // Alguns eventos
-p.addEventListener('mouseenter', show) // Quando o mouse passa em cima do elemento
-p.addEventListener('mousemove', show)  // A cada movimento que o mouse faz em cima do elemento
-window.addEventListener('scroll', show) // Quando você scrolla a tela
-window.addEventListener('resize', show) // Quando o tamanho da tela diminui ou aumenta
-window.addEventListener('keydown', show) // Quando você pressiona alguma tecla 
+// p.addEventListener('mouseenter', show)
+// Quando o mouse passa em cima do elemento
+
+// p.addEventListener('mousemove', show)  
+// A cada movimento que o mouse faz em cima do elemento
+
+// window.addEventListener('scroll', show) 
+// Quando você scrolla a tela
+
+// window.addEventListener('resize', show) 
+// Quando o tamanho da tela diminui ou aumenta
+
+// window.addEventListener('keydown', show) 
+// Quando você pressiona alguma tecla 
 
 // O evento de keyboard é muito interessante pois possui várias coisas
 function handleColor(event) {
@@ -72,30 +81,56 @@ imgs.forEach(img => {
 
 const linksInternos = document.querySelectorAll('[href^="#"]')
 
-linksInternos.addEventListener('click', linksInternosToggle())
+linksInternos.forEach(link => {
+  link.addEventListener('click', linksInternosToggle)
+});
 
-function linksInternosToggle(){
-  linksInternos.forEach(element => {
-    console.log(element.classList.contains('ativo'))
+function linksInternosToggle(event) {
+  event.preventDefault()
+  linksInternos.forEach(link => {
+    link.classList.remove('ativo')
   });
+  this.classList.add('ativo')
+
+  console.log('esse', this)
+  console.log(linksInternos)
 }
 
-// a pessoa vai clicar em um dos linksInternos, então preciso de um evento de click 
-// quando um ativar, ou seja, o evento ativar ele vai verificar se os outros links internos possuem a classe ativo, se tiver ele vai tirar e apenas ativar no link em que foi clicado
-// não esquecer de prevenir o comportamento padrão do evento de clique
-
-
-// como fazer isso em código de forma eficiente?
-// - criar constante com os links 
-// - criar o evento de clique
-// - na função callback do eventListener fazer uma condição, se cada um dos elementos
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
 
+const allElements = document.querySelectorAll('body')
+console.log(allElements);
+
+allElements.forEach(element => {
+  element.addEventListener('click', (event) => {
+    console.log('esse elemento que está sendo clicado', event.target)
+  })
+});
 
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
 
+// allElements.forEach(element => {
+//   element.addEventListener('click', (event) => {
+//     console.log(event.target)
+//     event.target.remove()
+//   })
+// });
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+const textos = document.querySelectorAll('p, a, h1, h2, h3')
+
+function aumentarTexto(event) {
+  if (event.key == 't') {
+    textos.forEach(texto => {
+      texto.style.fontSize =  texto.style.fontSize + 1
+    });
+  }
+}
+
+function aumentar() {
+  
+}
