@@ -112,12 +112,12 @@ allElements.forEach(element => {
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
 
-// allElements.forEach(element => {
-//   element.addEventListener('click', (event) => {
-//     console.log(event.target)
-//     event.target.remove()
-//   })
-// });
+allElements.forEach(element => {
+  element.addEventListener('click', (event) => {
+    console.log(event.target)
+    event.target.remove()
+  })
+});
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
 
