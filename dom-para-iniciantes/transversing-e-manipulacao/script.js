@@ -29,3 +29,8 @@ console.log(lista.children[lista.children.length - 1]);
 
 lista.querySelectorAll('li')
 lista.querySelector('li:last-child')
+
+// O node pega tudo que está no documento, isso inclui até mesmo quebras de linha. Quando usamos algumas propriedades tipo para selecionar o element acima ele vai realmente fazer isso, sem ignorar espaços ou comentários 
+
+lista.childNodes; // Aparece todos os elementos que estão lá.
+
