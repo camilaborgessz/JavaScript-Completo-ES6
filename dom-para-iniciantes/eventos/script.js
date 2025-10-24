@@ -125,12 +125,8 @@ const textos = document.querySelectorAll('p, a, h1, h2, h3')
 
 function aumentarTexto(event) {
   if (event.key == 't') {
-    textos.forEach(texto => {
-      texto.style.fontSize =  texto.style.fontSize + 1
-    });
+    document.documentElement.classList.toggle('texto-maior')
   }
 }
 
-function aumentar() {
-  
-}
+window.addEventListener('keydown', aumentarTexto)
