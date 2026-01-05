@@ -70,3 +70,20 @@ function initScrollSuave(event) {
 }
 
 initScrollSuave()
+
+
+function animacaoScroll(){
+    const sections = document.querySelectorAll('js-scroll')
+    
+    function animacao(){
+        console.log('section')
+        
+        // sections.forEach(section => {
+            
+        // });
+    }
+
+    window.addEventListener('scroll', animacao)
+}
+
+animacaoScroll()
