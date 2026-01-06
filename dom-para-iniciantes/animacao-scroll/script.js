@@ -72,17 +72,20 @@ function initScrollSuave(event) {
 initScrollSuave()
 
 
-function animacaoScroll(){
-    const sections = document.querySelectorAll('js-scroll')
-    
-    function animacao(){
-        console.log('section')
-        
-        // sections.forEach(section => {
-            
-        // });
-    }
+function animacaoScroll() {
+    const sections = document.querySelectorAll('.js-scroll')
+    const metadeTela = window.innerHeight * 0.6
 
+    function animacao() {
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top 
+            const isSectionVisible = (sectionTop - metadeTela) < 0
+
+            if(isSectionVisible){
+                section.classList.add('ativo')
+            }
+        });
+    }
     window.addEventListener('scroll', animacao)
 }
 
