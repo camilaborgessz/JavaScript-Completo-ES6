@@ -5,6 +5,14 @@ const carro = {
   preco: 0
 }
 
+const celular = {
+  tela: "10pol",
+  bateria: "5000 mh",
+  marca: "samsung"
+}
+
+
+
 const honda = carro
 honda.marca = "Honda"
 honda.preco = 2000
