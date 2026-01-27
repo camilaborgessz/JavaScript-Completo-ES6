@@ -58,14 +58,8 @@ const compras = [
     }
 ]
 
-const precos = compras.map((compra) => {
-    let preco = compra.preco
-    preco = preco.replace("R$ ", "").replace(",", ".")
-    return preco
-})
-
-const valorCompras = precos.reduce((acc, current) => {
-    current = parseFloat(current)
-    return acc + current
+const valorCompras = compras.reduce((acc, current) => {
+    let preco = +current.preco.replace("R$ ", "").replace(",", ".")
+    return acc + preco
 }, 0)
 console.log(valorCompras)
