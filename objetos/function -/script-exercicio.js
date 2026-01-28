@@ -15,6 +15,8 @@ function NovoElemento(tag, classe, conteudo){
     this.tag = document.createElement(tag),
     this.classe = this.tag.classList.add(classe),
     this.conteudo = this.tag.innerText = conteudo
+
+    return this.tag
 }
 
 // Crie uma nova função utilizando a anterior como base
@@ -34,3 +36,10 @@ function ElementoClasse(conteudo){
 }
 
 ElementoClasse.call(novoElemento, "ola mundo")
+
+// O que o professor fez:
+
+const criarElemento = NovoElemento.bind(null, 'h1', 'titulo')
+const cursosJS = criarElemento("Cursos de JavaScript")
+
+console.log(cursosJS);
