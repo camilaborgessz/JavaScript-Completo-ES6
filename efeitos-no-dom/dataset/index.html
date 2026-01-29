@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="menu" id="menu">
+    <nav class="menu" data-menu="suave" id="menu">
         <ul>
             <li> <a href="#animais">Animais</a> </li>
             <li> <a href="#faq">Faq</a> </li>
@@ -18,9 +18,9 @@
             <li> <a href="https://www.origamid.com/">Dev → </a> </li>
         </ul>
     </nav>
-    <section class="grid-section animais js-scroll ativo" id="animais">
+    <section class="grid-section animais ativo" data-anime="scroll"  id="animais">
         <h1 class="titulo">Animais fantásticos</h1>
-        <ul class="animais-lista js-tabmenu">
+        <ul class="animais-lista" data-tab="menu">
             <!-- Hello -->
             <li>
                 <img src="img/imagem1.jpg" alt="">
@@ -41,8 +41,8 @@
                 <img src="img/imagem6.jpg" alt="">
             </li>
         </ul>
-        <div class="animais-descricao js-tabcontent">
-            <section data-anime="show-down" data-anime="show-right">
+        <div class="animais-descricao" data-tab="content">
+            <section data-anime="show-down">
                 <h2>Raposa</h2>
                 <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte
                     médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
@@ -53,7 +53,7 @@
                 <p>Elas são conhecidas por sua inteligência, astúcia e capacidade de adaptação a diferentes ambientes,
                     incluindo áreas urbanas.</p>
             </section>
-            <section data-anime="show-down" data-anime="show-right">
+            <section data-anime="show-right">
                 <h2>Esquilo</h2>
                 <p>Os esquilos são pequenos mamíferos roedores da família Sciuridae, facilmente reconhecidos por sua
                     cauda longa e felpuda.</p>
@@ -64,7 +64,7 @@
                 <p>Esses animais são vistos como curiosos e brincalhões, sendo frequentes personagens de histórias e
                     desenhos infantis.</p>
             </section>
-            <section data-anime="show-down" data-anime="show-right">
+            <section data-anime="show-down">
                 <h2>Urso</h2>
                 <p>Os ursos são grandes mamíferos da família Ursidae, conhecidos por sua força e corpo robusto, com
                     patas fortes e garras afiadas.</p>
@@ -75,7 +75,7 @@
                 <p>Na cultura humana, representam força, proteção e ternura, aparecendo em histórias, brinquedos e
                     símbolos culturais.</p>
             </section>
-            <section data-anime="show-down" data-anime="show-right">
+            <section data-anime="show-right">
                 <h2>Lobo</h2>
                 <p>Os lobos são mamíferos carnívoros da família dos canídeos, parentes próximos dos cães domésticos.</p>
                 <p>Vivem em florestas, montanhas e regiões geladas, formando grupos sociais chamados alcateias, com
@@ -85,7 +85,7 @@
                 <p>Simbolizam lealdade, coragem e união, e aparecem em lendas e histórias representando tanto perigo
                     quanto força coletiva.</p>
             </section>
-            <section data-anime="show-down" data-anime="show-right">
+            <section data-anime="show-down">
                 <h2>Macaco</h2>
                 <p>Os macacos são primatas conhecidos por sua inteligência, agilidade e semelhança com os humanos.</p>
                 <p>Vivem em florestas tropicais, savanas e regiões montanhosas, formando grupos sociais com comunicação
@@ -95,7 +95,7 @@
                 <p>São associados à curiosidade e brincadeira, e também usados em pesquisas por sua proximidade genética
                     com os humanos.</p>
             </section>
-            <section data-anime="show-down" data-anime="show-right">
+            <section data-anime="show-right">
                 <h2>Leão</h2>
                 <p>Os leões são grandes felídeos carnívoros, conhecidos como “reis da selva”, com corpo musculoso e, nos
                     machos, uma juba imponente.</p>
@@ -108,9 +108,9 @@
             </section>
         </div>
     </section>
-    <section class="grid-section faq js-accordion js-scroll" id="faq">
+    <section class="grid-section faq" data-anime="scroll" id="faq">
         <h1 class="titulo">FAQ</h1>
-        <dl class="faq-lista">
+        <dl class="faq-lista" data-anime="accordion">
             <dt>Qual a idade dos animais?</dt>
             <dd>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte
                 médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
@@ -126,7 +126,7 @@
             </dd>
         </dl>
     </section>
-    <section class="grid-section contato js-scroll " id="contato">
+    <section class="grid-section contato" data-anime="scroll"  id="contato">
         <h1 class="titulo">Contato</h1>
         <div class="mapa">
             <img src="img/mapa.png">

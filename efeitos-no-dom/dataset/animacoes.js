@@ -57,8 +57,6 @@
 // show-down ou show-right a sua respectiva section
 // assim que a mesma aparecer na tela (animacao tab)
 
-document.querySelectorAll([data-show-down])
-
 // No CSS faça com que show-down anime de cima para baixo
 // e show-right continue com a mesma animação da esquerda
 // para a direita
