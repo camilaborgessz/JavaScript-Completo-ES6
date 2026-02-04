@@ -1,5 +1,4 @@
 export default function animacaoScroll() {
-    console.log('estou aqui')
     const sections = document.querySelectorAll('[data-anime="scroll"]')
     const metadeTela = window.innerHeight * 0.6
 

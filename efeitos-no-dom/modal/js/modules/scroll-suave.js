@@ -1,5 +1,4 @@
 export default function initScrollSuave(event) {
-    console.log('estou aqui')
     const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]') // Monta uma NodeList com todos os links internos
 
     function scrollToSection(event) {
