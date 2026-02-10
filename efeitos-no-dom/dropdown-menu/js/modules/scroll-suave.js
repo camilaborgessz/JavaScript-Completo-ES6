@@ -6,7 +6,6 @@ export default function initScrollSuave(event) {
         const href = event.currentTarget.getAttribute('href') // Aqui pegamos o atributo (#contato, #animais, #contato)
         const section = document.querySelector(href) // Aqui pegamos a tag html do elemento selecionado
         const topo = section.offsetTop // Aqui pega o valor da altura do começo da seção 
-        console.log(topo)
 
         section.scrollIntoView({
             behavior: 'smooth',
