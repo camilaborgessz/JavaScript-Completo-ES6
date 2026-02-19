@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      form input {
+        display: block;
+        margin-bottom: 1rem;
+        margin-top: 0.3rem;
+      }
+      button {
+        margin-top: 20rem;
+      }
+    </style>
+
+    <form name="botao" id="botao">
+      <label for="backgroundColor">Background Color</label>
+      <input type="color" name="backgroundColor" id="backgroundColor" />
+      <label for="color">Color</label>
+      <input type="color" name="color" id="color" />
+    </form>
+    <button id="btn">Botão</button>
+    <pre><code>
+      
+    </code></pre>
+
+    <script>
+  const btn = document.querySelector("#btn");
+  const controles = document.querySelector("#botao");
+  const code = document.querySelector("code");
+  const dados = {};
+
+  function handleStyle(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+    
+    updateStyle(name, value);
+    saveData(name, value);
+  }
+
+  function updateStyle(name, value) {
+    btn.style[name] = value;
+  }
+
+  function saveData(name, value) {
+    dados[name] = value;
+    code.textContent = JSON.stringify(dados, null, 2);
+    localStorage[name] = value;
+  }
+
+  function setLocalStorage() {
+    const keys = Object.keys(localStorage);
+    
+    keys.forEach(key => {
+      const value = localStorage[key];
+     
+      controles.elements[key].value = value;
+      updateStyle(key, value);
+      
+      saveData(key, value);
+    });
+  }
+
+  controles.addEventListener("input", handleStyle);
+
+  setLocalStorage();
+</script>
+    </script>
+  </body>
+</html>
