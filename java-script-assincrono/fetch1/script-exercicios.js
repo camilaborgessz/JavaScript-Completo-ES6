@@ -43,3 +43,14 @@ setInterval(getBtc, 30000)
 // Utilizando a API https://api.chucknorris.io/jokes/random
 // retorne uma piada randomica do chucknorris, toda vez que
 // clicar em próxima
+
+const jokeButton = document.querySelector("#jokeButton")
+const dsJoke = document.querySelector("#dsJoke")
+function getJoke() {
+    fetch("https://api.chucknorris.io/jokes/random")
+        .then((r) => r.json())
+        .then((r) => dsBRL.textContent = r.value)
+}
+
+jokeButton.addEventListener('click', getJoke)
+getJoke() 
