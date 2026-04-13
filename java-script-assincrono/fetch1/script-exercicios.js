@@ -46,6 +46,7 @@ getBtc();
 // retorne uma piada randomica do chucknorris, toda vez que
 // clicar em próxima
 
+<<<<<<< HEAD
 const dsJoke = document.querySelector('#dsJoke')
 const next = document.querySelector('#next')
 
@@ -59,3 +60,15 @@ function newJoke() {
 newJoke()
 
 next.addEventListener('click', newJoke)
+=======
+const jokeButton = document.querySelector("#jokeButton")
+const dsJoke = document.querySelector("#dsJoke")
+function getJoke() {
+    fetch("https://api.chucknorris.io/jokes/random")
+        .then((r) => r.json())
+        .then((r) => dsBRL.textContent = r.value)
+}
+
+jokeButton.addEventListener('click', getJoke)
+getJoke() 
+>>>>>>> 3b889cb6d832012420b713e80a1f6abe156cc5c2
