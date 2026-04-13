@@ -40,6 +40,22 @@ function getBtc() {
 
 setInterval(getBtc, 30000)
 
+getBtc();
+
 // Utilizando a API https://api.chucknorris.io/jokes/random
 // retorne uma piada randomica do chucknorris, toda vez que
 // clicar em próxima
+
+const dsJoke = document.querySelector('#dsJoke')
+const next = document.querySelector('#next')
+
+function newJoke() {
+    fetch("https://api.chucknorris.io/jokes/random")
+        .then((r) => r.json())
+        .then((r) => {
+            dsJoke.innerHTML = r.value
+        })
+}
+newJoke()
+
+next.addEventListener('click', newJoke)
