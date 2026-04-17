@@ -16,10 +16,6 @@ const nome = "Borges";
 
 console.log(nome);
 
-
-
-
-
 // Como podemos utilizar
 // a função abaixo.
 const active = callback => callback();
